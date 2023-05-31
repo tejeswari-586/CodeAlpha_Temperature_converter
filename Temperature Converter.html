@@ -1,0 +1,167 @@
+<!Doctype html>
+<html>
+<head>
+     <title>Task-1</title>
+</head>
+<body style="background-color:rgba(64, 67, 243, 0.712)">
+<h1 style="text-align:center;color:rgb(8, 0, 8)"><u>Temperature Converter</u></h1>
+<marquee style="font-size:20px" delay="30">Convert the temperature from one to another</marquee>
+<style>
+.div1{
+display:flex;
+justify-content:space-evenly;
+}
+.box{
+    height:200px;
+    width:400px;
+    background-color:rgb(146, 230, 181);
+    border-radius:50px;
+    margin-top:50px;
+}
+input{
+    height:23px;
+    width:150px;
+    border-radius:8px;
+    border:2px solid plum;
+    margin-left:10px;
+}
+.bt{
+    height:30px;
+    width:100px;
+    border:2px solid plum;
+    border-radius:10px;
+    margin-left:150px;
+}
+</style>
+<div class="div1">
+<div class="box">
+    <h2 style="text-align:center"><u>Celsius to kelvin</u></h2>
+<form>
+    <label style="margin-left:80px">Celsius</label>
+    <input type="number" class="cel">
+</form>
+<p id="k"></p>
+<button onclick="convert()" class="bt">Convert</button>
+</div>
+<div class="box">
+    <h2 style="text-align:center"><u>Kelvin to celsius</u></h2>
+<form>
+    <label style="margin-left:80px">Kelvin</label>
+    <input type="number" class="kel">
+</form>
+<p id="c"></p>
+<button onclick="convertktoc()" class="bt">Convert</button>
+</div>
+</div>
+<div class="div1">
+    <div class="box">
+        <h2 style="text-align:center"><u>Celsius to Fahrenheit</u></h2>
+    <form>
+        <label style="margin-left:80px">Celsius</label>
+        <input type="number" class="celsius">
+    </form>
+    <p id="f"></p>
+    <button onclick="convertctof()"   class="bt">Convert</button>
+    </div>
+    <div class="box">
+        <h2 style="text-align:center"><u>Fahreheit to celsius</u></h2>
+    <form>
+        <label style="margin-left:80px">Fahreheit</label>
+        <input type="number"   class="fahrenheit">
+    </form>
+    <p id="fah"></p>
+    <button onclick="convertftoc()"   class="bt">Convert</button>
+ </div>
+</div>
+<div class="div1">
+    <div class="box">
+        <h2 style="text-align:center"><u>Kelvin to Fahrenheit</u></h2>
+    <form>
+        <label style="margin-left:80px">Kelvin</label>
+        <input type="number" class="kelvin">
+    </form>
+        <p id="klv"></p>
+       <button onclick="convertktof()" class="bt">Convert</button>
+    </div>
+        <div class="box">
+        <h2 style="text-align:center"><u>Fahrenheit to Kelvin</u></h2>
+    <form>
+        <label style="margin-left:80px">Fahrenheit</label>
+        <input type="number" class="far">
+    </form>
+        <p id="fht"></p>
+       <button onclick="convertftok()" class="bt">Convert</button>
+    </div>
+</div>
+<script>
+    function convert(){
+    var cel=document.querySelector(".cel").value
+    if(Number(cel)>0){
+        document.getElementById("k").innerHTML=Number(cel)+273.15
+    }
+    else{
+        alert("Please enter valid input")
+    }
+}
+function convertktoc(){
+    var kel=document.querySelector(".kel").value
+    if(Number(kel)>0){
+        document.getElementById("c").innerHTML=Number(kel)-273.15
+    }
+    else{
+        alert("Please enter valid input")
+    }
+
+}
+function convertctof(){
+    //var cel=document.querySelector(".cel").value
+    var cel=document.querySelector(".celsius").value
+    //document.write(cel)
+    if(Number(cel)>0){
+        var n=Number(cel)
+        var f=(n*9)/5
+        document.getElementById("f").innerHTML=f+32
+    }
+    else{
+        alert("Please enter valid input")
+    }
+}
+        function convertftoc(){
+        var fah=document.querySelector(".fahrenheit").value
+        if(Number(fah)>0){
+            var n=Number(fah)-32
+            var c=(n*5)/9
+            document.getElementById("fah").innerHTML=c
+        }
+        else{
+            alert("Please enter valid input")
+        }
+    }
+        function convertktof(){
+        var kelv=document.querySelector(".kelvin").value
+        if(Number(kelv)>0){
+            var c=Number(kelv)-273.15
+            var f=(c*9)/5
+            document.getElementById("klv").innerHTML=f+32
+        }
+        else{
+            alert("Please enter valid input")
+        }
+    }
+        function convertftok(){
+        var fah=document.querySelector(".far").value
+        if(Number(fah)>0){
+            var n=Number(fah)-32
+            var c=(n*5)/9
+            document.getElementById("fht").innerHTML=c+273.15
+        }
+        else{
+            alert("Please enter valid input")
+        }
+    }
+
+
+
+</script>
+</body>
+</html>
